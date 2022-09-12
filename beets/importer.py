@@ -231,6 +231,11 @@ class ImportSession:
             iconfig['link'] = False
             iconfig['hardlink'] = False
             iconfig['reflink'] = False
+        elif iconfig['copy']:
+            iconfig['reflink'] = False
+            iconfig['move'] = False
+            iconfig['link'] = False
+            iconfig['hardlink'] = False
         elif iconfig['link']:
             iconfig['copy'] = False
             iconfig['move'] = False
